@@ -24,6 +24,7 @@ export class GoogleLoginComponent {
 
   signInWithGoogle() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    
   }
 
   signOut() {
