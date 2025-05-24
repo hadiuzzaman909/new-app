@@ -1,10 +1,11 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SocialAuthService, FacebookLoginProvider, SocialUser } from '@abacritt/angularx-social-login';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-facebook-login',
   imports: [CommonModule],
+  standalone:true,
   templateUrl: './facebook-login.component.html',
   styleUrl: './facebook-login.component.scss'
 })
@@ -17,7 +18,7 @@ export class FacebookLoginComponent implements OnInit {
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      console.log(this.user);
+      console.log('Facebook user:',this.user);
       this.loggedIn = (user != null);
     });
   }
